@@ -111,12 +111,11 @@
 		},
 
 		render : function() {
-			var variables = {
-				text : this.model.getText(),
-				counter : this.model.getStatusPosition()
-			};
-			var template = _.template($("#card_template").html(), variables);
+			var template = _.template($("#card_template").html());
 			this.el.html(template);
+			
+			$("#text").text(this.model.getText());
+			$("#status").text(this.model.getStatusPosition());
 
 			return this;
 		},
@@ -158,12 +157,12 @@
 		}
 	});
 
-	var url = $('#ws_path').val() + "/" + $("#lesson_id").val() + ".json";
+	var url = $('#ws_path').val();
 
 	$.getJSON(url, function(json) {
 		var c = new CardsCollection;
 
-		$.each(json.lesson.cards, function(i, card) {
+		$.each(json.cards, function(i, card) {
 			card = new Card({
 				question : card.question,
 				answer : card.answer
@@ -182,10 +181,6 @@
 		Backbone.emulateHTTP = true;
 		Backbone.emulateJSON = true;
 		
-		// back to list
-		$('.back_button').click(function() {
-			window.location.href = $('#back_path').val();
-		});
 	});
 
 })(jQuery);

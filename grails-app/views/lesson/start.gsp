@@ -2,30 +2,29 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <g:javascript library="application" />
     </head>
-
 <body>
 
- 	<input id="ws_path" type="hidden" name="lesson_id" value="/lessons" />
- 	<input id="lesson_id" type="hidden" name="lesson_id" value="${lessonID}" />
+ 	<input id="ws_path" type="hidden" name="lesson_id" value="<g:createLink mapping="lesson" params="[id:'1']"/>"/>
     
     <div id="cardsapp" class="front"> 
     	<div id="card_container"></div>
     </div> 
     
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.1.7/underscore-min.js"></script>
+	<g:javascript library="underscore-min" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/0.5.3/backbone-min.js"></script>
+	<g:javascript library="backbone-min" />
 	<script src="${resource(dir:'js',file:'test.js')}"></script>
 	<link rel="stylesheet" type="text/css" href="${resource(dir:'css',file:'cards.css')}"></link>
 	
 	<script language="JavaScript" type="text/template" id="card_template">
-		<a href="#" class="back_button"><spring:message code="button_back" htmlEscape="false"/></a>
-		<div id="status"><%= counter %></div>
+		<a href="<g:createLink controller="lesson" action="lessons" />" class="back_button"><g:message code="card.button.back"/></a>
+		<div id="status"></div>
 		<div class="group">
- 			<div class="previous"><img src="/resources/images/arrow_left.png" /></div>
-		<div class="flip" id="text"><%= text %></div>
- 			<div class="next"><img src="/resources/images/arrow_right.png" /></div>
+ 			<div class="previous"><img src="${resource(dir:'images',file:'arrow_left.png')}" /></div>
+		<div class="flip" id="text"></div>
+ 			<div class="next"><img src="${resource(dir:'images',file:'arrow_right.png')}" /></div>
 		</div>
 	</script>
 	
