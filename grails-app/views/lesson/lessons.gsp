@@ -18,7 +18,7 @@
                     <thead>
                         <tr>
                         	<th>
-                        		<g:message code="default.name.label"/>
+                        	<g:message code="default.name.label"/>
                         	</th>
                         </tr>
                     </thead>

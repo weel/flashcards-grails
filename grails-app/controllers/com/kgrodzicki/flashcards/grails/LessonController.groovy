@@ -8,4 +8,8 @@ class LessonController {
 	def lessons = {
 		[ lessons : Lesson.list() ]
 	}
+	
+	def start = {
+		
+	}
 }
