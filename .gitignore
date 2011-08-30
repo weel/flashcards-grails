@@ -1,5 +1,6 @@
 .project
 .settings
 .classpath
+**/*.class
 target/
 db.*
