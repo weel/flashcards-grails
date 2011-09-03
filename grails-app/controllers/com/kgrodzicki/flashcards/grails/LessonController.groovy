@@ -5,8 +5,23 @@ import grails.converters.JSON
 
 class LessonController {
 	static scaffold = Lesson
-	
+
+	def lessons = {
+		[ lessons : Lesson.list() ]
+	}
+
+	def start = {
+	}
+
 	def showJson = {
-		render Lesson.list() as JSON
+		def results = Lesson.get( params.id )
+		
+		render(contentType:"text/json") {
+			cards = array {
+				for(c in results.cards) {
+					card (question:c.question, answer:c.answer)
+				}
+			}
+		}
 	}
 }
