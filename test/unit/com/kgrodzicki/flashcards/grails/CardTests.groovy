@@ -1,8 +1,8 @@
-package flashcards.grails
+package com.kgrodzicki.flashcards.grails
 
 import grails.test.*
 
-class LessonTests extends GrailsUnitTestCase {
+class CardTests extends GrailsUnitTestCase {
     protected void setUp() {
         super.setUp()
     }

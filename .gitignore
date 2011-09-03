@@ -1,6 +1,8 @@
 .project
 .settings
 .classpath
-*.class
+**/*.class
+classes
 target/
 db.*
+*.log
