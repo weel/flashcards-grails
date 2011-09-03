@@ -2,6 +2,7 @@
 .settings
 .classpath
 **/*.class
+classes
 target/
 db.*
 *.log
