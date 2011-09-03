@@ -11,7 +11,7 @@
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${resource(dir:'images',file:'spinner.gif')}" alt="${message(code:'spinner.alt',default:'Loading...')}" />
         </div>
-        <div id="mainLogo"><a href="">Flash Cards</a></div>
+        <div id="mainLogo"><a href="${createLink(uri: '/')}">Flash Cards</a></div>
         <g:layoutBody />
     </body>
 </html>
