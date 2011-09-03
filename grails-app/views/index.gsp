@@ -52,9 +52,9 @@
     </head>
     <body>
     	<div class="nav">
-            <span class="menuButton"><g:link controller="lesson" action="lessons"><g:message code="index.flahCard.lesson" /></g:link></span>
+            <span class="menuButton"><g:link controller="lesson" action="lessons" class="list"><g:message code="index.flahCard.lesson" /></g:link></span>
             <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-            	<span class="menuButton"><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></span>
+            	<span class="menuButton"><g:link controller="${c.logicalPropertyName}" class="list">${c.name}</g:link></span>
             </g:each>
         </div>
         <div id="pageBody">
