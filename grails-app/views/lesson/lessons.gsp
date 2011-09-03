@@ -18,7 +18,10 @@
                     <thead>
                         <tr>
                         	<th>
-                        	<g:message code="default.name.label"/>
+                        		<g:message code="default.id.label"/>
+                        	</th>
+                        	<th>
+                        		<g:message code="default.name.label"/>
                         	</th>
                         </tr>
                     </thead>
@@ -26,7 +29,10 @@
                     <g:each in="${lessons}" status="i" var="lesson">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                         	<td>
-                        	<g:link action="start" id="${lesson.id}">${lesson.name}</g:link>
+                        		${lesson.id}
+                        	</td>
+                        	<td>
+                        		<g:link action="start" id="${lesson.id}">${lesson.name}</g:link>
                         	</td>
                         </tr>
                     </g:each>
