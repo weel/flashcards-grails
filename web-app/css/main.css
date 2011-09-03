@@ -16,8 +16,9 @@ body {
     color: #333;
     font: 11px verdana, arial, helvetica, sans-serif;
 }
-#grailsLogo {
-	padding:20px;
+#mainLogo {
+	padding:1em .5em 0.5em;
+	font-size: 2em;
 }
 
 a:link, a:visited, a:hover {
