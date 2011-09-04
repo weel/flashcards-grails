@@ -15,11 +15,27 @@ class LessonController {
 
 	def showJson = {
 		def results = Lesson.get( params.id )
-		
+
 		render(contentType:"text/json") {
 			cards = array {
 				for(c in results.cards) {
 					card (question:c.question, answer:c.answer)
+				}
+			}
+		}
+	}
+
+	def allJson = {
+		def results = Lesson.getAll()
+
+		render(contentType:"text/json") {
+			lessons = array {
+				for(l in results) {
+					lesson (id: l.id, name:l.name, cards:array {
+						for(c in l.cards) {
+							card (question:c.question, answer:c.answer)
+						}
+					})
 				}
 			}
 		}
