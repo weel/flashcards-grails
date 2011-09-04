@@ -53,9 +53,18 @@
     <body>
     	<div class="nav">
             <span class="menuButton"><g:link controller="lesson" action="lessons" class="list"><g:message code="index.flahCard.lesson" /></g:link></span>
-            <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-            	<span class="menuButton"><g:link controller="${c.logicalPropertyName}" class="list">${c.name}</g:link></span>
-            </g:each>
+            <sec:access expression="hasRole('ROLE_ADMIN')">
+	            <span class="menuButton"><g:link controller="card" class="list"><g:message code="button.card.label" /></g:link></span>
+    	        <span class="menuButton"><g:link controller="lesson" class="list"><g:message code="button.lesson.label" /></g:link></span>
+            </sec:access>
+            
+            <sec:ifLoggedIn>
+				<span class="menuButton"><g:link controller='logout'><g:message code="button.logout.label"/></g:link></span>
+			</sec:ifLoggedIn>
+			
+			<sec:ifNotLoggedIn>
+				<span class="menuButton"><g:link controller='login' action='auth'><g:message code="button.login.label"/></g:link></span>
+			</sec:ifNotLoggedIn>
         </div>
         <div id="pageBody">
             <h1><g:message code="index.welcome" /></h1>

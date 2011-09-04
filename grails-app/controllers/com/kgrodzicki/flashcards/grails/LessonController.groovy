@@ -2,17 +2,23 @@ package com.kgrodzicki.flashcards.grails
 
 import com.kgrodzicki.flashcards.grails.Lesson;
 import grails.converters.JSON
+import grails.plugins.springsecurity.Secured
 
+@Secured(['ROLE_ADMIN'])
 class LessonController {
+	
 	static scaffold = Lesson
 
+	@Secured(['permitAll'])
 	def lessons = {
 		[ lessons : Lesson.list() ]
 	}
 
+	@Secured(['permitAll'])
 	def start = {
 	}
 
+	@Secured(['permitAll'])
 	def showJson = {
 		def results = Lesson.get( params.id )
 
@@ -24,6 +30,7 @@ class LessonController {
 			}
 		}
 	}
+	
 
 	def allJson = {
 		def results = Lesson.getAll()
