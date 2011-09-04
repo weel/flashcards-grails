@@ -10,8 +10,12 @@ class UrlMappings {
 		"/"(view:"/index")
 		"500"(view:'/error')
 		
-		name lesson: "/lesson/rest/$id?"(controller:"lesson", action:"showJson", parseRequest:false){
+		name lesson: "/lesson/rest/$id"(controller:"lesson", action:"showJson", parseRequest:false){
 			action = [GET:"showJson"]
+		}
+		
+		name exportlessons: "/lesson/all/"(controller:"lesson", action:"allJson", parseRequest:false){
+			action = [GET:"allJson"]
 		}
 	}
 }
