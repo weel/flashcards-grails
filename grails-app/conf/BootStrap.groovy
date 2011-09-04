@@ -1,3 +1,6 @@
+import com.kgrodzicki.flashcards.Role
+import com.kgrodzicki.flashcards.User
+import com.kgrodzicki.flashcards.UserRole
 import com.kgrodzicki.flashcards.grails.Card
 import com.kgrodzicki.flashcards.grails.Lesson
 
