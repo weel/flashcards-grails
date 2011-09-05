@@ -6,7 +6,7 @@
     </head>
 <body>
 
- 	<input id="ws_path" type="hidden" name="lesson_id" value="<g:createLink mapping="lesson" params="[id:'1']"/>"/>
+ 	<input id="ws_path" type="hidden" name="lesson_id" value="<g:createLink mapping="lesson" params="[id:params.id]"/>"/>
     
     <div id="cardsapp" class="front"> 
     	<div id="card_container"></div>
