@@ -6,7 +6,7 @@ import grails.plugins.springsecurity.Secured
 
 @Secured(['ROLE_ADMIN'])
 class LessonController {
-	
+
 	static scaffold = Lesson
 
 	@Secured(['permitAll'])
@@ -30,7 +30,6 @@ class LessonController {
 			}
 		}
 	}
-	
 
 	def allJson = {
 		def results = Lesson.getAll()
@@ -38,9 +37,9 @@ class LessonController {
 		render(contentType:"text/json") {
 			lessons = array {
 				for(l in results) {
-					lesson (id: l.id, name:l.name, cards:array {
+					lesson (id:l.id, name:l.name, cards:array {
 						for(c in l.cards) {
-							card (question:c.question, answer:c.answer)
+							card (id:c.id, question:c.question, answer:c.answer)
 						}
 					})
 				}
