@@ -56,6 +56,7 @@
             <sec:access expression="hasRole('ROLE_ADMIN')">
 	            <span class="menuButton"><g:link controller="card" class="list"><g:message code="button.card.label" /></g:link></span>
     	        <span class="menuButton"><g:link controller="lesson" class="list"><g:message code="button.lesson.label" /></g:link></span>
+    	        <span class="menuButton"><g:link mapping="exportlessons" class="export"><g:message code="button.exporLesson.label" /></g:link></span>
             </sec:access>
             
             <sec:ifLoggedIn>
