@@ -1,25 +1,30 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <meta name="layout" content="mainMobile" />
         <g:javascript library="application" />
     </head>
 <body>
+
+	<content tag="buttons">
+		<a href="${createLink(uri: '/')}" data-icon="back" data-direction="reverse" data-theme="d"><g:message code="default.home.label"/></a>
+		<a href="<g:createLink controller="lessonMobile"  action="lessons"/>" data-icon="delete" data-direction="reverse" data-theme="d"><g:message code="default.button.lessons.label"/></a>
+	</content>
 
  	<input id="ws_path" type="hidden" name="lesson_id" value="<g:createLink mapping="lesson" params="[id:params.id]"/>"/>
     
     <div id="cardsapp" class="front"> 
     	<div id="card_container"></div>
-    </div> 
+    </div>
     
-	<g:javascript library="underscore-min" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-	<g:javascript library="backbone-min" />
-	<script src="${resource(dir:'js',file:'test.js')}"></script>
-	<link rel="stylesheet" type="text/css" href="${resource(dir:'css',file:'cards.css')}"></link>
+    <content tag="customScripts">
+    	<g:javascript library="underscore-min" />
+		<g:javascript library="backbone-min" />
+		<script src="${resource(dir:'js',file:'cardsBackbone.js')}"></script>
+		<link rel="stylesheet" type="text/css" href="${resource(dir:'css',file:'cardsMobile.css')}"></link>
+	</content>
 	
 	<script language="JavaScript" type="text/template" id="card_template">
-		<a href="<g:createLink controller="lesson" action="lessons" />" class="back_button"><g:message code="card.button.back"/></a>
 		<div id="status"></div>
 		<div class="group">
  			<div class="previous"><img src="${resource(dir:'images',file:'arrow_left.png')}" /></div>
