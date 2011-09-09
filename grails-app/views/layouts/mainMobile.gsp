@@ -45,7 +45,7 @@
 
 <body>
 	<!-- Start of first page -->
-	<div data-role="page" id="main" data-position="fixed">
+	<div data-role="page" data-position="fixed">
 		<div data-role="header">
 			<g:pageProperty name="page.buttons" />
 			<h1><g:message code="index.flahCard.lesson"/></h1>
