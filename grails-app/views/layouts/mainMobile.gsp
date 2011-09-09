@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title><g:message code="index.flahCard.lesson"/></title>
+  <title><g:layoutTitle default="Flash Cards" /></title>
   <meta name="description" content="">
   <meta name="author" content="">
   
@@ -45,10 +45,9 @@
 
 <body>
 	<!-- Start of first page -->
-	<div data-role="page" id="main" data-position="fixed">
-	
+	<div data-role="page" data-position="fixed">
 		<div data-role="header">
-			<a href="${createLink(uri: '/')}" data-icon="home" data-theme="d"><g:message code="default.home.label"/></a>
+			<g:pageProperty name="page.buttons" />
 			<h1><g:message code="index.flahCard.lesson"/></h1>
 		</div>
 		<!-- /header -->
@@ -59,7 +58,7 @@
 		<!-- /content -->
 
 		<div data-role="footer" data-position="fixed" data-theme="c">
-			<h4><g:message code="default.mobile.footer"/></h4>
+			<h6><a href="http://bit.ly/gh-fc">Fork me on GitHub</a></h6>
 		</div>
 		<!-- /footer -->
 	</div>
