@@ -37,36 +37,43 @@
 	<!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="${resource(dir:'mobile/css',file:'style.css?v=1')}">
- 
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.css" />
+  
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="${resource(dir:'mobile/js/libs',file:'modernizr-custom.js')}"></script>
 </head>
 
 <body>
+	<!-- Start of first page -->
+	<div data-role="page" id="main" data-position="fixed">
+	
+		<div data-role="header">
+			<a href="${createLink(uri: '/')}" data-icon="home" data-theme="d"><g:message code="default.home.label"/></a>
+			<h1><g:message code="index.flahCard.lesson"/></h1>
+		</div>
+		<!-- /header -->
 
-  <div id="container">
-    <header>
+		<div data-role="content">
+			<g:layoutBody />
+		</div>
+		<!-- /content -->
 
-    </header>
-    <div id="main" role="main">
-      
-    </div>
-    
-    <footer>
-
-    </footer>
-  </div> <!--! end of #container -->
-
+		<div data-role="footer" data-position="fixed" data-theme="c">
+			<h4><g:message code="default.mobile.footer"/></h4>
+		</div>
+		<!-- /footer -->
+	</div>
+	<!-- /page -->
 
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-  <script>window.jQuery || document.write("<script src='${resource(dir:'mobile/js/libs',file:'jquery-1.5.1.min.js')}'>\x3C/script>")</script>
+  <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
+  <script>window.jQuery || document.write("<script src='${resource(dir:'mobile/js/libs',file:'jquery-1.6.2.min.js')}'>\x3C/script>")</script>
+  <script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
   
   <!-- scripts concatenated and minified via ant build script -->
-  <script src="${resource(dir:'mobile/js/libs',file:'helper.js')}"></script>
+  <script src="${resource(dir:'mobile/js/mylibs',file:'helper.js')}"></script>
   <!-- end concatenated and minified scripts-->
   
   <script>

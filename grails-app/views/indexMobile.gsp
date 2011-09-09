@@ -4,6 +4,6 @@
         <meta name="layout" content="mainMobile" />
     </head>
     <body>
-    	<h1>Mobile</h1>
+    	<p>Mobile</p>
     </body>
 </html>
