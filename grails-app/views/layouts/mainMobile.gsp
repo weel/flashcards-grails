@@ -58,7 +58,7 @@
 		<!-- /content -->
 
 		<div data-role="footer" data-position="fixed" data-theme="c">
-			<h4><g:message code="default.mobile.footer"/></h4>
+			<h6><a href="http://bit.ly/gh-fc">Fork me on GitHub</a></h6>
 		</div>
 		<!-- /footer -->
 	</div>
