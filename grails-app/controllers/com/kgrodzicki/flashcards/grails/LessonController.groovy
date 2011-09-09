@@ -46,4 +46,35 @@ class LessonController {
 			}
 		}
 	}
+	
+	def upload = {
+	}
+	
+	def uploadFile = {
+		def f = request.getFile('jsonData')
+		
+		if(!f.empty) {
+			def lessons = JSON.parse(f.getInputStream(), "UTF-8")
+			// TODO [kgrodzicki] refactor
+			lessons.each{ lesson ->
+				Lesson lessonEntity = new Lesson()
+				
+				lessonEntity.name = lesson.name;
+				
+				lesson.cards.each { c ->
+					Card cardEntity = new Card(question:c.question,answer:c.answer)
+					lessonEntity.addToCards(cardEntity)
+					cardEntity.addToLessons(lessonEntity)
+				}
+				
+				lessonEntity.save(flush:true)
+			}
+			
+			flash.message = 'File uploaded.'
+			render(view:'upload')
+		} else {
+			flash.message = 'File cannot be empty.'
+			render(view:'upload')
+		}
+	}
 }
