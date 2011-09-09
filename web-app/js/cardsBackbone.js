@@ -125,13 +125,7 @@
 		},
 
 		changeQuestion : function(card) {
-			if (card.get('question') == true) {
-				$("#cardsapp").removeClass();
-				$("#cardsapp").addClass('front');
-			} else {
-				$("#cardsapp").removeClass();
-				$("#cardsapp").addClass('back');
-			}
+			$("#cardsapp").toggleClass('back');
 		},
 
 		changePositionStatus : function(card) {
@@ -180,7 +174,7 @@
 
 		Backbone.emulateHTTP = true;
 		Backbone.emulateJSON = true;
-		
+		var footer = $(".ui-footer").hide();
 	});
 
 })(jQuery);
