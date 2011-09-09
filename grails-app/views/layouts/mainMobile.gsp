@@ -72,6 +72,7 @@
   <script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
   
   <!-- scripts concatenated and minified via ant build script -->
+  <g:pageProperty name="page.customScripts" />
   <script src="${resource(dir:'mobile/js/mylibs',file:'helper.js')}"></script>
   <!-- end concatenated and minified scripts-->
   
