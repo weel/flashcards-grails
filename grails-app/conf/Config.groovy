@@ -93,3 +93,7 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.kgrodzicki.flashcards.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.kgrodzicki.flashcards.UserRole'
 grails.plugins.springsecurity.authority.className = 'com.kgrodzicki.flashcards.Role'
+
+springMobile {
+	deviceResolver="wurfl"
+}
