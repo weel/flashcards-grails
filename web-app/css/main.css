@@ -101,6 +101,11 @@ input:focus, select:focus, textarea:focus {
     color: #333;
     padding-left: 25px;
 }
+.menuButton a.import {
+    background: url(../images/skin/import.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
 /* MESSAGES AND ERRORS */
 
 .message {
