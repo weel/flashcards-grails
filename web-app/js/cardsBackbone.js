@@ -184,8 +184,8 @@
 		  var cardsContainer = $("#card_container");
 		  var iphoneBar = 0;
 		  
-		   if (/iPhone/.test(MBP.ua)) { 
-			   alert('iphone');
+		   if (/iPhone/.test(MBP.ua)) {
+			   window.scrollTo(0, 1);
 			   iphoneBar = 60;
 		   }
 		  
@@ -195,6 +195,6 @@
 		  cardsContainer.height(content_height);
 	 };
 	 
-     $(window).bind("orientationchange resize pageshow", fixgeometry);
+     $(window).bind("orientationchange pageshow", fixgeometry);
 
 })(jQuery);
