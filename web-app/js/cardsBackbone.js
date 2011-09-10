@@ -180,13 +180,18 @@
 		  var header = $(".ui-header:visible");
 		  var footer = $(".ui-footer:visible");
 		  var cardsContainer = $("#card_container");
+		  var iphoneBar = 0;
 		  
-		  var viewport_height = $(window).height();
+		   /iPhone/.test(MBP.ua) && !pageYOffset && !location.hash && setTimeout(function () {
+			   iphoneBar = 60;
+		   }, 1000);
+		  
+		  var viewport_height = $(window).height() + iphoneBar;
 		  var content_height = viewport_height - header.outerHeight() - footer.outerHeight();
 		  
 		  cardsContainer.height(content_height);
 	 };
+	 
      $(window).bind("orientationchange resize pageshow", fixgeometry);
-
 
 })(jQuery);
