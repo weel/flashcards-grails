@@ -174,7 +174,19 @@
 
 		Backbone.emulateHTTP = true;
 		Backbone.emulateJSON = true;
-		var footer = $(".ui-footer").hide();
 	});
+	
+	var fixgeometry = function() {
+		  var header = $(".ui-header:visible");
+		  var footer = $(".ui-footer:visible");
+		  var cardsContainer = $("#card_container");
+		  
+		  var viewport_height = $(window).height();
+		  var content_height = viewport_height - header.outerHeight() - footer.outerHeight();
+		  
+		  cardsContainer.height(content_height);
+	 };
+     $(window).bind("orientationchange resize pageshow", fixgeometry);
+
 
 })(jQuery);

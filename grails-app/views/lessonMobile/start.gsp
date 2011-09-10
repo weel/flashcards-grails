@@ -10,10 +10,12 @@
 		<a href="${createLink(uri: '/')}" data-icon="back" data-direction="reverse" data-theme="d"><g:message code="default.home.label"/></a>
 		<a href="<g:createLink controller="lessonMobile"  action="lessons"/>" data-icon="delete" data-direction="reverse" data-theme="d"><g:message code="default.button.lessons.label"/></a>
 	</content>
+	
+	<content tag="style">padding: 0px</content>
 
  	<input id="ws_path" type="hidden" name="lesson_id" value="<g:createLink mapping="lesson" params="[id:params.id]"/>"/>
     
-    <div id="cardsapp" class="front ui-page ui-page-active"> 
+    <div id="cardsapp" class="front"> 
     	<div id="card_container"></div>
     </div>
     
