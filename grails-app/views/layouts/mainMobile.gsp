@@ -67,8 +67,8 @@
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
   <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
   <script>window.jQuery || document.write("<script src='${resource(dir:'mobile/js/libs',file:'jquery-1.6.2.min.js')}'>\x3C/script>")</script>
-  <g:pageProperty name="page.customScripts" />
   <script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
+  <g:pageProperty name="page.customScripts" />
   
   <!-- scripts concatenated and minified via ant build script -->
   <script src="${resource(dir:'mobile/js/mylibs',file:'helper.js')}"></script>

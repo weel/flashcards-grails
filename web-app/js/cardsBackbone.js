@@ -154,6 +154,7 @@
 	var url = $('#ws_path').val();
 
 	$.getJSON(url, function(json) {
+		$.mobile.pageLoading(false);
 		var c = new CardsCollection;
 
 		$.each(json.cards, function(i, card) {
@@ -162,6 +163,7 @@
 				answer : card.answer
 			});
 			c.add(card);
+			
 		});
 
 		var cardView = new CardView({
@@ -174,6 +176,7 @@
 
 		Backbone.emulateHTTP = true;
 		Backbone.emulateJSON = true;
+		$.mobile.pageLoading(true);
 	});
 	
 	var fixgeometry = function() {
