@@ -29,9 +29,9 @@
 	<script language="JavaScript" type="text/template" id="card_template">
 		<div id="status"></div>
 		<div class="group">
- 			<div class="previous"><img src="${resource(dir:'images',file:'arrow_left.png')}" /></div>
+ 			<div class="previous"><img src="${resource(dir:'images',file:'arrow_left_small.png')}" /></div>
 		<div class="flip" id="text"></div>
- 			<div class="next"><img src="${resource(dir:'images',file:'arrow_right.png')}" /></div>
+ 			<div class="next"><img src="${resource(dir:'images',file:'arrow_right_small.png')}" /></div>
 		</div>
 	</script>
 	
