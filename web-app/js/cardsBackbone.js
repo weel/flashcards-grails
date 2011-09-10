@@ -154,6 +154,7 @@
 	var url = $('#ws_path').val();
 
 	$.getJSON(url, function(json) {
+		$.mobile.pageLoading(false);
 		var c = new CardsCollection;
 
 		$.each(json.cards, function(i, card) {
@@ -162,6 +163,7 @@
 				answer : card.answer
 			});
 			c.add(card);
+			
 		});
 
 		var cardView = new CardView({
@@ -174,19 +176,25 @@
 
 		Backbone.emulateHTTP = true;
 		Backbone.emulateJSON = true;
+		$.mobile.pageLoading(true);
 	});
 	
 	var fixgeometry = function() {
 		  var header = $(".ui-header:visible");
 		  var footer = $(".ui-footer:visible");
 		  var cardsContainer = $("#card_container");
+		  var iphoneBar = 0;
 		  
-		  var viewport_height = $(window).height();
+		   /iPhone/.test(MBP.ua) && !pageYOffset && !location.hash && setTimeout(function () {
+			   iphoneBar = 60;
+		   }, 1000);
+		  
+		  var viewport_height = $(window).height() + iphoneBar;
 		  var content_height = viewport_height - header.outerHeight() - footer.outerHeight();
 		  
 		  cardsContainer.height(content_height);
 	 };
+	 
      $(window).bind("orientationchange resize pageshow", fixgeometry);
-
 
 })(jQuery);
