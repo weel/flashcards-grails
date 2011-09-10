@@ -57,9 +57,8 @@
 		</div>
 		<!-- /content -->
 		
-		<div data-role="footer" data-position="fixed" data-theme="c">
-			<h6><a href="http://bit.ly/gh-fc">GitHub</a></h6>
-		</div>
+		<g:pageProperty name="page.footer"/>
+		<!-- /footer -->
 	</div>
 	<!-- /page -->
 
