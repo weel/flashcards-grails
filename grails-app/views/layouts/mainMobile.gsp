@@ -58,7 +58,7 @@
 		<!-- /content -->
 		
 		<div data-role="footer" data-position="fixed" data-theme="c">
-			<h6><a href="http://bit.ly/gh-fc">Fork me on GitHub</a></h6>
+			<h6><a href="http://bit.ly/gh-fc">GitHub</a></h6>
 		</div>
 	</div>
 	<!-- /page -->
@@ -68,7 +68,6 @@
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
   <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
   <script>window.jQuery || document.write("<script src='${resource(dir:'mobile/js/libs',file:'jquery-1.6.2.min.js')}'>\x3C/script>")</script>
-  <g:pageProperty name="page.customScripts" />
   <script src="http://code.jquery.com/mobile/1.0b3/jquery.mobile-1.0b3.min.js"></script>
   
   <!-- scripts concatenated and minified via ant build script -->
@@ -97,5 +96,6 @@
     s.parentNode.insertBefore(g,s)}(document,"script"));
   </script>
 
+  <g:pageProperty name="page.customScripts" />
 </body>
 </html>
