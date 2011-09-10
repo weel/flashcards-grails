@@ -181,16 +181,16 @@
 	
 	var fixgeometry = function() {
 		  var header = $(".ui-header:visible");
-		  var footer = $(".ui-footer:visible");
 		  var cardsContainer = $("#card_container");
 		  var iphoneBar = 0;
 		  
-		   /iPhone/.test(MBP.ua) && !pageYOffset && !location.hash && setTimeout(function () {
+		   if (/iPhone/.test(MBP.ua)) { 
+			   alert('iphone');
 			   iphoneBar = 60;
-		   }, 1000);
+		   }
 		  
 		  var viewport_height = $(window).height() + iphoneBar;
-		  var content_height = viewport_height - header.outerHeight() - footer.outerHeight();
+		  var content_height = viewport_height - header.outerHeight();
 		  
 		  cardsContainer.height(content_height);
 	 };
