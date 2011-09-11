@@ -14,5 +14,10 @@
 				<h6><a href="http://bit.ly/gh-fc">GitHub</a></h6>
 			</div>
 		</content>
+		
+		<content tag="customScripts">
+		<script src='${resource(dir:'mobile/js/libs',file:'bookmark_bubble.js')}'></script>
+		<script src='${resource(dir:'mobile/js/',file:'bubble.js')}' ></script>
+		</content>
     </body>
 </html>
