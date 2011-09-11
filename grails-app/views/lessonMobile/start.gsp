@@ -7,8 +7,11 @@
 <body>
 
 	<content tag="buttons">
-		<a href="${createLink(uri: '/')}" data-icon="back" data-direction="reverse" data-theme="d"><g:message code="default.home.label"/></a>
-		<a href="<g:createLink controller="lessonMobile"  action="lessons"/>" data-icon="delete" data-direction="reverse" data-theme="d"><g:message code="default.button.lessons.label"/></a>
+		<a href="<g:createLink action="lessons" />" data-icon="back" data-direction="reverse" data-theme="d"><g:message code="default.back.label"/></a>
+	</content>
+	
+	<content tag="title">
+		${params.title}
 	</content>
 	
 	<content tag="style">padding: 0px</content>

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <!-- Conditional comment for mobile ie7 http://blogs.msdn.com/b/iemobile/ -->
 <!-- Appcache Facts http://appcachefacts.info/ -->
 <!--[if IEMobile 7 ]>    <html class="no-js iem7" manifest="default.appcache?v=1"> <![endif]-->
@@ -48,7 +48,7 @@
 	<div data-role="page" data-position="fixed">
 		<div data-role="header">
 			<g:pageProperty name="page.buttons" />
-			<h1><g:message code="index.flahCard.lesson"/></h1>
+			<h1><g:pageProperty name="page.title" default="Flash Cards" /></h1>
 		</div>
 		<!-- /header -->
 
