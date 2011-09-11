@@ -10,6 +10,10 @@
 		<a href="<g:createLink action="lessons" />" data-icon="back" data-direction="reverse" data-theme="d"><g:message code="default.back.label"/></a>
 	</content>
 	
+	<content tag="title">
+		${params.title}
+	</content>
+	
 	<content tag="style">padding: 0px</content>
 
  	<input id="ws_path" type="hidden" name="lesson_id" value="<g:createLink mapping="lesson" params="[id:params.id]"/>"/>
