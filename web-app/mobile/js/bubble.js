@@ -29,7 +29,7 @@ window.addEventListener('load', function() {
 
     bubble.setHashParameter = function() {
       if (!this.hasHashParameter()) {
-        window.location.hash += parameter;
+        window.localStorage += parameter;/* change for works with jquery mobile*/
       }
     };
 
