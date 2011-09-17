@@ -6,14 +6,14 @@
 </head>
 <body>
 	<div class="page-header">
-		<h1>Forms</h1>
+		<h1><g:message code="default.upload.file" /></h1>
 	</div>
 	<div class="row">
 		<div class="span16 columns">
 			<g:form action="uploadFile" method="post"
 				enctype="multipart/form-data">
 				<fieldset>
-					<legend>Upload Form:</legend>
+					<legend><g:message code="default.upload.form.legend" /></legend>
 
 					<g:if test="${flash.message}">
 						<div class="alert-message block-message info">
@@ -26,8 +26,7 @@
 					<div class="clearfix">
 						<label for="fileInput">File Input</label>
 						<div class="input">
-							<input class="input-file" id="fileInput" name="jsonData"
-								type="file">
+							<input class="input-file" id="fileInput" name="jsonData" type="file">
 						</div>
 					</div>
 					<div class="actions">
