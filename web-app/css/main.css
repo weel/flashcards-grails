@@ -1,3 +1,10 @@
 body {
 	padding-top: 60px;
 }
+
+.pills a {
+	background: #0050a3;
+	color: #fff;
+	padding: 0 15px;
+	text-shadow: 0 0px 1px #ddd;
+}

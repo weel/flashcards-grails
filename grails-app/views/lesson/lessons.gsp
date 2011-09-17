@@ -18,10 +18,8 @@
 		<table class="zebra-striped">
 			<thead>
 				<tr>
-					<th><g:message code="default.id.label" />
-					</th>
-					<th><g:message code="default.name.label" />
-					</th>
+					<th><g:message code="default.id.label" /></th>
+					<th><g:message code="default.name.label" /></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -32,8 +30,7 @@
 						</td>
 						<td><g:link action="start" id="${lesson.id}">
 								${lesson.name}
-							</g:link>
-						</td>
+							</g:link></td>
 					</tr>
 				</g:each>
 			</tbody>
