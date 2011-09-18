@@ -13,6 +13,7 @@ Technologies
 #. Bootstrap from Twitter - http://twitter.github.com/bootstrap/
 
 Mobile app:
+
 #. Mobile Boilerplate - http://html5boilerplate.com/mobile/	 
 #. Backbone.js - http://documentcloud.github.com/backbone/
 #. jQuery Mobile - http://jquerymobile.com/
@@ -46,4 +47,4 @@ Installation
 Production
 ==========
 
-Check out running application on cloud foundry(http://www.cloudfoundry.com/) - bit.ly/fcards
+Check out running application on cloud foundry(http://www.cloudfoundry.com/) - http://bit.ly/fcards
