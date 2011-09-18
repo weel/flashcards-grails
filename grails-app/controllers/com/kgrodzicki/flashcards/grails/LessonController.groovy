@@ -8,6 +8,7 @@ import grails.plugins.springsecurity.Secured
 class LessonController {
 
 	static scaffold = Lesson
+    def lessonService
 
 	@Secured(['permitAll'])
 	def lessons = {
@@ -61,13 +62,13 @@ class LessonController {
 				
 				lessonEntity.name = lesson.name;
 				
+                def cards = []
 				lesson.cards.each { c ->
 					Card cardEntity = new Card(question:c.question,answer:c.answer)
-					lessonEntity.addToCards(cardEntity)
-					cardEntity.addToLessons(lessonEntity)
+                    cards.add(cardEntity)
 				}
 				
-				lessonEntity.save(flush:true)
+				lessonService.save(lessonEntity, cards)
 			}
 			
 			flash.message = 'File uploaded.'
