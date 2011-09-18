@@ -25,35 +25,33 @@
         </g:hasErrors>
         
         <g:form action="save" <%= multiPart ? ' enctype="multipart/form-data"' : '' %>>
-	        <table>
-	            <tbody>
-	            <%  excludedProps = Event.allEvents.toList() << 'version' << 'id' << 'dateCreated' << 'lastUpdated'
-	                persistentPropNames = domainClass.persistentProperties*.name
-	                props = domainClass.properties.findAll { persistentPropNames.contains(it.name) && !excludedProps.contains(it.name) }
-	                Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
-	                display = true
-	                boolean hasHibernate = PluginManagerHolder.pluginManager.hasGrailsPlugin('hibernate')
-	                props.each { p ->
-	                    if (!Collection.class.isAssignableFrom(p.type)) {
-	                        if (hasHibernate) {
-	                            cp = domainClass.constrainedProperties[p.name]
-	                            display = (cp ? cp.display : true)
-	                        }
-	                        if (display) { %>
-	                <tr class="prop">
-	                    <td valign="top" class="name">
-	                        <label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></label>
-	                    </td>
-	                    <td valign="top" class="value \${hasErrors(bean: ${propertyName}, field: '${p.name}', 'errors')}">
-	                        ${renderEditor(p)}
-	                    </td>
-	                </tr>
-	            <%  }   }   } %>
-	            </tbody>
-	        </table>
-            <div class="actions">
-            	<g:submitButton name="create" class="btn primary" value="\${message(code: 'default.button.create.label', default: 'Create')}" />
-          	</div>
+        	<fieldset>
+					<legend><g:message code="form.create.legend" args="[entityName]" /></legend>
+					
+		            <%  excludedProps = Event.allEvents.toList() << 'version' << 'id' << 'dateCreated' << 'lastUpdated'
+		                persistentPropNames = domainClass.persistentProperties*.name
+		                props = domainClass.properties.findAll { persistentPropNames.contains(it.name) && !excludedProps.contains(it.name) }
+		                Collections.sort(props, comparator.constructors[0].newInstance([domainClass] as Object[]))
+		                display = true
+		                boolean hasHibernate = PluginManagerHolder.pluginManager.hasGrailsPlugin('hibernate')
+		                props.each { p ->
+		                    if (!Collection.class.isAssignableFrom(p.type)) {
+		                        if (hasHibernate) {
+		                            cp = domainClass.constrainedProperties[p.name]
+		                            display = (cp ? cp.display : true)
+		                        }
+		                        if (display) { %>
+                            <div class="clearfix">
+		                        <label for="${p.name}"><g:message code="${domainClass.propertyName}.${p.name}.label" default="${p.naturalName}" /></label>
+		                    	<div class="input value \${hasErrors(bean: ${propertyName}, field: '${p.name}', 'errors')}">
+		                        	${renderEditor(p)}
+		                    	</div>
+		                    </div>
+ 		            <%  }   }   } %>
+		            <div class="actions">
+		            	<g:submitButton name="create" class="btn primary" value="\${message(code: 'default.button.create.label', default: 'Create')}" />
+		          	</div>
+          	</fieldset>
         </g:form>
     </body>
 </html>
