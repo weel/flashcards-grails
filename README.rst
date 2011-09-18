@@ -4,6 +4,19 @@ Flash Cards
 
 Flash cards are a common way to memorize subject material.
 
+Technologies
+============
+
+#. Grails - http://grails.org/
+#. Spring Security
+#. Spring Mobile
+#. Bootstrap from Twitter - http://twitter.github.com/bootstrap/
+
+Mobile app:
+#. Mobile Boilerplate - http://html5boilerplate.com/mobile/	 
+#. Backbone.js - http://documentcloud.github.com/backbone/
+#. jQuery Mobile - http://jquerymobile.com/
+
 Requirements
 ============
 
@@ -29,3 +42,8 @@ Installation
     grails runApp
 
 #. Application is now up and running - http://localhost:8080/flashcards-grails (admin/admin)
+
+Production
+==========
+
+Check out running application on cloud foundry(http://www.cloudfoundry.com/) - bit.ly/fcards
