@@ -51,7 +51,7 @@
 		<g:layoutBody />
 		
 		<footer> 
-        	<p>&copy; kgrodzicki.com 2011</p> 
+        	<p>&copy; <g:link base="http://kgrodzicki.com">kgrodzicki.com</g:link>  2011 | <g:link base="https://github.com/kgrodzicki/flashcards-grails">Fork me on github</g:link></p> 
       	</footer> 
 	</div>
 	

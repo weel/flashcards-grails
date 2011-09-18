@@ -6,7 +6,7 @@
 <body>
 	<div class="hero-unit">
 		<h1><g:message code="index.welcome" /></h1>
-		<p>Start learning...</p>
+		<p><g:message code="index.description" /></p>
 		
 		<p><g:link controller="lesson" action="lessons" class="btn primary large"><g:message code="index.flahCard.lesson" /></g:link></p>
 	</div>
