@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Welcome to Grails</title>
+<title><g:message code="index.welcome" /></title>
 <meta name="layout" content="main" />
 </head>
 <body>
