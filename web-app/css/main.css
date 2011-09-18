@@ -8,3 +8,7 @@ body {
 	padding: 0 15px;
 	text-shadow: 0 0px 1px #ddd;
 }
+
+select[multiple] {
+	height: 20em;	
+}
