@@ -1,22 +1,41 @@
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="layout" content="main" />
-        <title><g:message code="default.upload.file" /></title>
-    </head>
-    <body>
-        <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
-        </div>
-        <div class="body">
-        	<g:if test="${flash.message}">
-            <div class="message">${flash.message}</div>
-            </g:if>
-            Upload Form: <br />
-			<g:form action="uploadFile" method="post" enctype="multipart/form-data">
-				<input type="file" name="jsonData" />
-				<input type="submit" />
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="layout" content="main" />
+<title><g:message code="default.upload.file" /></title>
+</head>
+<body>
+	<div class="page-header">
+		<h1><g:message code="default.upload.file" /></h1>
+	</div>
+	<div class="row">
+		<div class="span16 columns">
+			<g:form action="uploadFile" method="post"
+				enctype="multipart/form-data">
+				<fieldset>
+					<legend><g:message code="default.upload.form.legend" /></legend>
+
+					<g:if test="${flash.message}">
+						<div class="alert-message block-message info">
+							<p>
+								${flash.message}
+							</p>
+						</div>
+					</g:if>
+
+					<div class="clearfix">
+						<label for="fileInput">File Input</label>
+						<div class="input">
+							<input class="input-file" id="fileInput" name="jsonData" type="file">
+						</div>
+					</div>
+					<div class="actions">
+						<input type="submit" class="btn primary" value="Upload">
+					</div>
+				</fieldset>
 			</g:form>
-        </div>
-    </body>
+		</div>
+		<!-- /row -->
+	</div>
+</body>
 </html>
