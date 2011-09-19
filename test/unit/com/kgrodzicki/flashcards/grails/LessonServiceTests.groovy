@@ -4,13 +4,13 @@ import grails.test.*
 
 class LessonServiceTests extends GrailsUnitTestCase {
     def service
-    
+
     protected void setUp() {
         super.setUp()
-        
+
         mockDomain(Lesson)
         mockDomain(Card)
-        
+
         service = new LessonService()
     }
 
@@ -23,14 +23,15 @@ class LessonServiceTests extends GrailsUnitTestCase {
         def lesson = new Lesson(name: "Test lesson")
         def card = new Card(question: "q1", answer: "a1")
         def card2 = new Card(question: "q2", answer: "a2")
-        def cards = [card, card2] 
-        
+        def cards = [card, card2]
+
         // when
         service.save(lesson, cards)
 
         // then
         assertEquals(1, Lesson.list().size())
-        // FIXME [kgrodzicki] 
+        // FIXME [kgrodzicki] doesn't work with GrailsUnitTestCase, when switch to integration test
+        // 'GroovyTestCase' 'No sinature method addTo'
         // assertEquals(2, Card.list().size())
     }
 }
