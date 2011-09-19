@@ -1,15 +1,16 @@
 package com.kgrodzicki.flashcards.grails
 
+import com.kgrodzicki.flashcards.grails.Card;
+import com.kgrodzicki.flashcards.grails.Lesson;
+import com.kgrodzicki.flashcards.grails.LessonService;
+
 import grails.test.*
 
-class LessonServiceTests extends GrailsUnitTestCase {
+class LessonServiceTests extends GroovyTestCase {
     def service
 
     protected void setUp() {
         super.setUp()
-
-        mockDomain(Lesson)
-        mockDomain(Card)
 
         service = new LessonService()
     }
@@ -30,8 +31,6 @@ class LessonServiceTests extends GrailsUnitTestCase {
 
         // then
         assertEquals(1, Lesson.list().size())
-        // FIXME [kgrodzicki] doesn't work with GrailsUnitTestCase, when switch to integration test
-        // 'GroovyTestCase' 'No sinature method addTo'
-        // assertEquals(2, Card.list().size())
+        assertEquals(2, Card.list().size())
     }
 }
