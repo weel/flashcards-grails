@@ -16,7 +16,7 @@
       	
         <h1><g:message code="default.show.label" args="[entityName]" /></h1>
         <g:if test="\${flash.message}">
-        <div class="message">\${flash.message}</div>
+        <div class="alert-message success">\${flash.message}</div>
         </g:if>
         
         <table class="zebra-striped">
